@@ -1,113 +1,434 @@
-import Image from 'next/image'
+import { ModeToggle } from "@/components/themeToggle";
+import TimeBox from "@/components/timeBox";
+import moment from "moment";
+import Image from "next/image";
+
+const bus1 = [
+  "6:30",
+  "6:45",
+  "7:00",
+  "7:06",
+  "7:12",
+  "7:18",
+  "7:24",
+  "7:30",
+  "7:36",
+  "7:42",
+  "7:48",
+  "7:54",
+  "8:00",
+  "8:06",
+  "8:12",
+  "8:18",
+  "8:24",
+  "8:30",
+  "8:36",
+  "8:42",
+  "8:48",
+  "8:54",
+  "9:00",
+  "9:09",
+  "9:18",
+  "9:27",
+  "9:36",
+  "9:45",
+  "9:54",
+  "10:00",
+  "10:09",
+  "10:18",
+  "10:27",
+  "10:36",
+  "10:45",
+  "10:54",
+  "11:00",
+  "11:09",
+  "11:18",
+  "11:27",
+  "11:36",
+  "11:45",
+  "11:54",
+  "12:00",
+  "12:06",
+  "12:12",
+  "12:18",
+  "12:24",
+  "12:30",
+  "12:36",
+  "12:42",
+  "12:48",
+  "12:54",
+  "13:00",
+  "13:09",
+  "13:18",
+  "13:27",
+  "13:36",
+  "13:45",
+  "13:54",
+  "14:00",
+  "14:09",
+  "14:18",
+  "14:27",
+  "14:36",
+  "14:45",
+  "14:54",
+  "15:00",
+  "15:09",
+  "15:18",
+  "15:27",
+  "15:36",
+  "15:45",
+  "15:54",
+  "16:00",
+  "16:06",
+  "16:12",
+  "16:18",
+  "16:24",
+  "16:30",
+  "16:36",
+  "16:42",
+  "16:48",
+  "16:54",
+  "17:00",
+  "17:06",
+  "17:12",
+  "17:18",
+  "17:24",
+  "17:30",
+  "17:36",
+  "17:42",
+  "17:48",
+  "17:54",
+  "18:00",
+  "18:06",
+  "18:12",
+  "18:18",
+  "18:24",
+  "18:30",
+  "18:36",
+  "18:42",
+  "18:48",
+  "18:54",
+  "19:00",
+  "19:15",
+  "19:45",
+  "20:15",
+  "20:45",
+  "21:15",
+  "21:45",
+];
+
+const bus2 = [
+  "6:00",
+  "7:00",
+  "7:07",
+  "7:15",
+  "7:22",
+  "7:30",
+  "7:37",
+  "7:45",
+  "7:52",
+  "8:00",
+  "8:07",
+  "8:15",
+  "8:22",
+  "8:30",
+  "8:37",
+  "8:45",
+  "8:52",
+  "9:00",
+  "9:12",
+  "9:24",
+  "9:36",
+  "9:48",
+  "10:00",
+  "10:12",
+  "10:24",
+  "10:36",
+  "10:48",
+  "11:00",
+  "11:12",
+  "11:24",
+  "11:36",
+  "11:48",
+  "12:00",
+  "12:07",
+  "12:15",
+  "12:22",
+  "12:30",
+  "12:37",
+  "12:45",
+  "12:52",
+  "13:00",
+  "13:12",
+  "13:24",
+  "13:36",
+  "13:48",
+  "14:00",
+  "14:12",
+  "14:24",
+  "14:36",
+  "14:48",
+  "15:00",
+  "15:12",
+  "15:24",
+  "15:36",
+  "15:48",
+  "16:00",
+  "16:07",
+  "16:15",
+  "16:22",
+  "16:30",
+  "16:37",
+  "16:45",
+  "16:52",
+  "17:00",
+  "17:07",
+  "17:15",
+  "17:22",
+  "17:30",
+  "17:37",
+  "17:45",
+  "17:52",
+  "18:00",
+  "18:07",
+  "18:15",
+  "18:22",
+  "18:30",
+  "18:37",
+  "18:45",
+  "18:52",
+  "19:00",
+  "19:15",
+  "19:45",
+  "20:15",
+  "20:45",
+  "21:15",
+  "21:45",
+];
+
+const bus3 = [
+  "6:50",
+  "7:05",
+  "7:20",
+  "7:35",
+  "7:50",
+  "8:05",
+  "8:20",
+  "8:35",
+  "8:50",
+  "9:05",
+  "9:25",
+  "9:45",
+  "10:05",
+  "10:25",
+  "10:45",
+  "11:05",
+  "11:25",
+  "11:45",
+  "12:05",
+  "12:20",
+  "12:35",
+  "12:50",
+  "13:05",
+  "13:25",
+  "13:45",
+  "14:05",
+  "14:25",
+  "14:45",
+  "15:05",
+  "15:25",
+  "15:45",
+  "16:05",
+  "16:20",
+  "16:35",
+  "16:50",
+  "17:05",
+  "17:20",
+  "17:35",
+  "17:50",
+  "18:05",
+  "18:20",
+  "18:35",
+  "18:50",
+];
+
+const bus4 = [
+  "6:45",
+  "6:55",
+  "7:03",
+  "7:10",
+  "7:18",
+  "7:25",
+  "7:33",
+  "7:40",
+  "7:48",
+  "7:55",
+  "8:03",
+  "8:10",
+  "8:18",
+  "8:25",
+  "8:33",
+  "8:40",
+  "8:48",
+  "8:55",
+  "9:03",
+  "9:15",
+  "9:27",
+  "9:39",
+  "9:51",
+  "10:03",
+  "10:15",
+  "10:27",
+  "10:39",
+  "10:51",
+  "11:03",
+  "11:15",
+  "11:27",
+  "11:39",
+  "11:51",
+  "12:03",
+  "12:10",
+  "12:18",
+  "12:25",
+  "12:33",
+  "12:40",
+  "12:48",
+  "12:55",
+  "13:03",
+  "13:15",
+  "13:27",
+  "13:39",
+  "13:51",
+  "14:03",
+  "14:15",
+  "14:27",
+  "14:39",
+  "14:51",
+  "15:03",
+  "15:15",
+  "15:27",
+  "15:39",
+  "15:51",
+  "16:03",
+  "16:10",
+  "16:18",
+  "16:25",
+  "16:33",
+  "16:40",
+  "16:48",
+  "16:55",
+  "17:03",
+  "17:10",
+  "17:18",
+  "17:25",
+  "17:33",
+  "17:40",
+  "17:48",
+  "17:55",
+  "18:03",
+  "18:10",
+  "18:18",
+  "18:25",
+  "18:33",
+  "18:40",
+  "18:48",
+  "18:55",
+  "19:10",
+  "19:40",
+  "20:10",
+  "20:40",
+  "21:10",
+  "21:40",
+];
+
+const bus5_1 = [
+  "6:45",
+  "7:00",
+  "7:15",
+  "7:30",
+  "7:45",
+  "8:00",
+  "8:15",
+  "8:30",
+  "8:45",
+  "9:00",
+  "9:30",
+  "10:00",
+  "10:30",
+  "11:00",
+];
+
+const bus5_2 = [
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:15",
+  "16:30",
+  "16:45",
+  "17:00",
+  "17:15",
+  "17:30",
+  "17:45",
+  "18:00",
+  "18:15",
+  "18:30",
+  "18:45",
+  "19:00",
+  "19:30",
+  "20:00",
+  "20:30",
+  "21:00",
+  "21:30",
+];
 
 export default function Home() {
+  const now = moment();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex min-h-[100dvh] dark:bg-neutral-900 bg-neutral-300 justify-center items-start">
+      <div className="flex m-4 sm:m-10 w-full flex-col gap-3">
+        <div className="box w-full p-3 rounded-md flex items-center justify-between px-6">
+          <h1 className="font-bold text-lg text">CU POP BUS</h1>
+          <div>
+            <ModeToggle />
+          </div>
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="w-full text-lg text">Bus 1 Time Schedule</h2>
+          <TimeBox time={bus1} now={now} />
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="label text">Bus 2 Time Schedule</h2>
+          <TimeBox time={bus2} now={now} />
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="text label">Bus 3 Time Schedule</h2>
+          <TimeBox time={bus3} now={now} />
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="label text">Bus 4 Time Schedule</h2>
+          <TimeBox time={bus4} now={now} />
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="label text">Bus 5 Time Schedule (ไม่วน ถ.บรรทัดทอง)</h2>
+          <TimeBox time={bus5_1} now={now} />
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="label text">Bus 5 Time Schedule (วน ถ.บรรทัดทอง)</h2>
+          <TimeBox time={bus5_2} now={now} />
+        </div>
+        <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
+          <h2 className="label text">Bus Routes</h2>
+          <Image src={"/cu-shuttle-bus-route-2560x2440.jpg"} alt={"Bus Route Map"} width={2560} height={2440}/>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
