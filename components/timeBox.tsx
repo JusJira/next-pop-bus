@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 
 
 function TimeBox(props: { time: string[] }) {
-  var now = DateTime.local({ zone: "utc" }).setZone('Asia/Bangkok');
+  var now = DateTime.local().setZone('Asia/Bangkok');
   var next = props.time
     .map(function (s) {
       return DateTime.fromFormat(s, "HH:mm",{ zone: "Asia/Bangkok" });
