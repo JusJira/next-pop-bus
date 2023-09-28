@@ -1,14 +1,13 @@
-"use client"
-
 import classNames from "classnames";
 import { Frown } from "lucide-react";
 import { DateTime } from "luxon";
+
 
 function TimeBox(props: { time: string[] }) {
   var now = DateTime.local({ zone: "utc" }).setZone('Asia/Bangkok');
   var next = props.time
     .map(function (s) {
-      return DateTime.fromFormat(s, "HH:mm",{ zone: "Asia/Bangkok" }).setZone('Asia/Bangkok');
+      return DateTime.fromFormat(s, "HH:mm",{ zone: "Asia/Bangkok" });
     })
     .sort(function (m) {
       return m.valueOf();
@@ -18,7 +17,7 @@ function TimeBox(props: { time: string[] }) {
     });
 
   var ctime = props.time.map(function (s) {
-    return DateTime.fromFormat(s, "HH:mm" ,{ zone: "Asia/Bangkok" }).setZone('Asia/Bangkok');
+    return DateTime.fromFormat(s, "HH:mm" ,{ zone: "Asia/Bangkok" });
   });
   if (next) {
     return (
