@@ -23,7 +23,7 @@ function TimeBox(props: { time: string[] }) {
   if (next) {
     return (
       <div className="flex w-full flex-row items-center justify-center">
-        <div className="container">
+        <div className="grid-container w-full m-auto">
         {ctime.map((time, index) => (
           <div
             key={index}

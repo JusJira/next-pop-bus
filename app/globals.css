@@ -87,7 +87,7 @@
   }
 }
 
-.container {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
   align-items: center;
