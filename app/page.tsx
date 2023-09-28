@@ -3,6 +3,8 @@ import { ModeToggle } from "@/components/themeToggle";
 import TimeBox from "@/components/timeBox";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 const bus1 = [
   "06:30",
   "06:45",

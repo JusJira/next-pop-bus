@@ -1,11 +1,12 @@
-"use client";
-
-import React from "react";
 import { DateTime } from "luxon";
 
 function Clock() {
-  var now = DateTime.local({ zone: "utc" }).setZone('Asia/Bangkok');
-  return <span className="text-lg">Last Updated: {now.toFormat("HH:mm").toString()}</span>;
+  var now = DateTime.local()
+    .setZone("Asia/Bangkok")
+    .toFormat("HH:mm")
+    .toString();
+
+  return <span className="text-lg">Last Updated: {now}</span>;
 }
 
 export default Clock;
