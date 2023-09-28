@@ -390,6 +390,8 @@ const bus5_2 = [
   "21:30",
 ];
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
