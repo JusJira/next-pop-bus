@@ -8,7 +8,7 @@ function TimeBox(props: { time: string[] }) {
   var now = DateTime.local().setZone('Asia/Bangkok');
   var next = props.time
     .map(function (s) {
-      return DateTime.fromFormat(s, "HH:mm");
+      return DateTime.fromFormat(s, "HH:mm").setZone('Asia/Bangkok');
     })
     .sort(function (m) {
       return m.valueOf();
@@ -18,7 +18,7 @@ function TimeBox(props: { time: string[] }) {
     });
 
   var ctime = props.time.map(function (s) {
-    return DateTime.fromFormat(s, "HH:mm");
+    return DateTime.fromFormat(s, "HH:mm").setZone('Asia/Bangkok');
   });
   if (next) {
     return (
