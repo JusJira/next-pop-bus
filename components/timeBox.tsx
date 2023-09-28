@@ -28,6 +28,7 @@ function TimeBox(props: { time: string[]; hide: boolean }) {
               className={classNames({
                 "outline outline-1 outline-black dark:outline-white w-16 text-center p-1 rounded-sm":
                   true,
+                // prettier-ignore
                 "hidden": props.hide && time < now,
                 "bg-neutral-400 dark:bg-neutral-900 text-neutral-200 dark:text-gray-600":
                   time < now,
