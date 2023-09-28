@@ -394,7 +394,8 @@ const bus5_2 = [
 export default function Home() {
   return (
     <>
-        <div className="box grid grid-cols-[repeat(auto-fit,_minmax(5rem,_1fr))]">
+        <div className="box">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(5rem,_1fr))] gap-2">
           <Button asChild>
             <Link href="#bus1">Bus 1</Link>
           </Button>
@@ -413,10 +414,11 @@ export default function Home() {
           <Button asChild>
             <Link href="#map">Map</Link>
           </Button>
-          <Button asChild>
-            <Link href="/">Show Less</Link>
-          </Button>
         </div>
+        <Button asChild>
+          <Link href="/">Show Less</Link>
+        </Button>
+      </div>
         <div className="box" id="bus1">
           <h2 className="w-full text-lg text">Bus 1 Time Schedule</h2>
           <TimeBox time={bus1} hide={false}/>
