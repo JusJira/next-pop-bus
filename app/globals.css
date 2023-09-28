@@ -79,7 +79,7 @@
   }
 
   .box {
-    @apply dark:bg-neutral-700 bg-white shadow-xl
+    @apply dark:bg-neutral-700 bg-white shadow-xl w-full p-4 rounded-md flex flex-col gap-3
   }
 
   .label {
@@ -89,7 +89,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+  grid-template-columns: repeat(auto-fit, 4rem);
   align-items: center;
   gap: 0.5rem;
 }

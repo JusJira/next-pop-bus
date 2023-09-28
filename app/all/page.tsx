@@ -414,34 +414,34 @@ export default function Home() {
             <Link href="#map">Map</Link>
           </Button>
           <Button asChild>
-            <Link href="/all">Show More</Link>
+            <Link href="/">Show Less</Link>
           </Button>
         </div>
         <div className="box" id="bus1">
           <h2 className="w-full text-lg text">Bus 1 Time Schedule</h2>
-          <TimeBox time={bus1}  hide={true}/>
+          <TimeBox time={bus1} hide={false}/>
         </div>
         <div className="box" id="bus2">
           <h2 className="label text">Bus 2 Time Schedule</h2>
-          <TimeBox time={bus2} hide={true}/>
+          <TimeBox time={bus2} hide={false}/>
         </div>
         <div className="box" id="bus3">
           <h2 className="text label">Bus 3 Time Schedule</h2>
-          <TimeBox time={bus3} hide={true}/>
+          <TimeBox time={bus3} hide={false}/>
         </div>
         <div className="box" id="bus4">
           <h2 className="label text">Bus 4 Time Schedule</h2>
-          <TimeBox time={bus4} hide={true}/>
+          <TimeBox time={bus4} hide={false}/>
         </div>
         <div className="box" id="bus5">
           <h2 className="label text">
             Bus 5 Time Schedule (ไม่วน ถ.บรรทัดทอง)
           </h2>
-          <TimeBox time={bus5_1} hide={true}/>
+          <TimeBox time={bus5_1} hide={false}/>
         </div>
         <div className="box">
           <h2 className="label text">Bus 5 Time Schedule (วน ถ.บรรทัดทอง)</h2>
-          <TimeBox time={bus5_2} hide={true}/>
+          <TimeBox time={bus5_2} hide={false}/>
         </div>
         <div className="box" id="map">
           <h2 className="label text">Bus Routes</h2>
