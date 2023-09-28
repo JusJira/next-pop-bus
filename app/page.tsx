@@ -1,38 +1,38 @@
+import Clock from "@/components/clock";
 import { ModeToggle } from "@/components/themeToggle";
 import TimeBox from "@/components/timeBox";
-import moment from "moment";
 import Image from "next/image";
 
 const bus1 = [
-  "6:30",
-  "6:45",
-  "7:00",
-  "7:06",
-  "7:12",
-  "7:18",
-  "7:24",
-  "7:30",
-  "7:36",
-  "7:42",
-  "7:48",
-  "7:54",
-  "8:00",
-  "8:06",
-  "8:12",
-  "8:18",
-  "8:24",
-  "8:30",
-  "8:36",
-  "8:42",
-  "8:48",
-  "8:54",
-  "9:00",
-  "9:09",
-  "9:18",
-  "9:27",
-  "9:36",
-  "9:45",
-  "9:54",
+  "06:30",
+  "06:45",
+  "07:00",
+  "07:06",
+  "07:12",
+  "07:18",
+  "07:24",
+  "07:30",
+  "07:36",
+  "07:42",
+  "07:48",
+  "07:54",
+  "08:00",
+  "08:06",
+  "08:12",
+  "08:18",
+  "08:24",
+  "08:30",
+  "08:36",
+  "08:42",
+  "08:48",
+  "08:54",
+  "09:00",
+  "09:09",
+  "09:18",
+  "09:27",
+  "09:36",
+  "09:45",
+  "09:54",
   "10:00",
   "10:09",
   "10:18",
@@ -118,28 +118,28 @@ const bus1 = [
 ];
 
 const bus2 = [
-  "6:00",
-  "7:00",
-  "7:07",
-  "7:15",
-  "7:22",
-  "7:30",
-  "7:37",
-  "7:45",
-  "7:52",
-  "8:00",
-  "8:07",
-  "8:15",
-  "8:22",
-  "8:30",
-  "8:37",
-  "8:45",
-  "8:52",
-  "9:00",
-  "9:12",
-  "9:24",
-  "9:36",
-  "9:48",
+  "06:00",
+  "07:00",
+  "07:07",
+  "07:15",
+  "07:22",
+  "07:30",
+  "07:37",
+  "07:45",
+  "07:52",
+  "08:00",
+  "08:07",
+  "08:15",
+  "08:22",
+  "08:30",
+  "08:37",
+  "08:45",
+  "08:52",
+  "09:00",
+  "09:12",
+  "09:24",
+  "09:36",
+  "09:48",
   "10:00",
   "10:12",
   "10:24",
@@ -207,18 +207,18 @@ const bus2 = [
 ];
 
 const bus3 = [
-  "6:50",
-  "7:05",
-  "7:20",
-  "7:35",
-  "7:50",
-  "8:05",
-  "8:20",
-  "8:35",
-  "8:50",
-  "9:05",
-  "9:25",
-  "9:45",
+  "06:50",
+  "07:05",
+  "07:20",
+  "07:35",
+  "07:50",
+  "08:05",
+  "08:20",
+  "08:35",
+  "08:50",
+  "09:05",
+  "09:25",
+  "09:45",
   "10:05",
   "10:25",
   "10:45",
@@ -253,29 +253,29 @@ const bus3 = [
 ];
 
 const bus4 = [
-  "6:45",
-  "6:55",
-  "7:03",
-  "7:10",
-  "7:18",
-  "7:25",
-  "7:33",
-  "7:40",
-  "7:48",
-  "7:55",
-  "8:03",
-  "8:10",
-  "8:18",
-  "8:25",
-  "8:33",
-  "8:40",
-  "8:48",
-  "8:55",
-  "9:03",
-  "9:15",
-  "9:27",
-  "9:39",
-  "9:51",
+  "06:45",
+  "06:55",
+  "07:03",
+  "07:10",
+  "07:18",
+  "07:25",
+  "07:33",
+  "07:40",
+  "07:48",
+  "07:55",
+  "08:03",
+  "08:10",
+  "08:18",
+  "08:25",
+  "08:33",
+  "08:40",
+  "08:48",
+  "08:55",
+  "09:03",
+  "09:15",
+  "09:27",
+  "09:39",
+  "09:51",
   "10:03",
   "10:15",
   "10:27",
@@ -342,17 +342,17 @@ const bus4 = [
 ];
 
 const bus5_1 = [
-  "6:45",
-  "7:00",
-  "7:15",
-  "7:30",
-  "7:45",
-  "8:00",
-  "8:15",
-  "8:30",
-  "8:45",
-  "9:00",
-  "9:30",
+  "06:45",
+  "07:00",
+  "07:15",
+  "07:30",
+  "07:45",
+  "08:00",
+  "08:15",
+  "08:30",
+  "08:45",
+  "09:00",
+  "09:30",
   "10:00",
   "10:30",
   "11:00",
@@ -389,44 +389,50 @@ const bus5_2 = [
 ];
 
 export default function Home() {
-  const now = moment();
-
   return (
     <main className="flex min-h-[100dvh] dark:bg-neutral-900 bg-neutral-300 justify-center items-start">
       <div className="flex m-4 sm:m-10 w-full flex-col gap-3">
         <div className="box w-full p-3 rounded-md flex items-center justify-between px-6">
           <h1 className="font-bold text-lg text">CU POP BUS</h1>
+          <Clock />
           <div>
             <ModeToggle />
           </div>
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
           <h2 className="w-full text-lg text">Bus 1 Time Schedule</h2>
-          <TimeBox time={bus1} now={now} />
+          <TimeBox time={bus1} />
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
           <h2 className="label text">Bus 2 Time Schedule</h2>
-          <TimeBox time={bus2} now={now} />
+          <TimeBox time={bus2} />
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
           <h2 className="text label">Bus 3 Time Schedule</h2>
-          <TimeBox time={bus3} now={now} />
+          <TimeBox time={bus3} />
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
           <h2 className="label text">Bus 4 Time Schedule</h2>
-          <TimeBox time={bus4} now={now} />
+          <TimeBox time={bus4} />
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
-          <h2 className="label text">Bus 5 Time Schedule (ไม่วน ถ.บรรทัดทอง)</h2>
-          <TimeBox time={bus5_1} now={now} />
+          <h2 className="label text">
+            Bus 5 Time Schedule (ไม่วน ถ.บรรทัดทอง)
+          </h2>
+          <TimeBox time={bus5_1} />
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
           <h2 className="label text">Bus 5 Time Schedule (วน ถ.บรรทัดทอง)</h2>
-          <TimeBox time={bus5_2} now={now} />
+          <TimeBox time={bus5_2} />
         </div>
         <div className="box w-full p-3 rounded-md flex flex-col px-6 gap-3">
           <h2 className="label text">Bus Routes</h2>
-          <Image src={"/cu-shuttle-bus-route-2560x2440.jpg"} alt={"Bus Route Map"} width={2560} height={2440}/>
+          <Image
+            src={"/cu-shuttle-bus-route-2560x2440.jpg"}
+            alt={"Bus Route Map"}
+            width={2560}
+            height={2440}
+          />
         </div>
       </div>
     </main>
