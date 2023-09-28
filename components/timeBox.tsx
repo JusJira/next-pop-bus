@@ -32,7 +32,7 @@ function TimeBox(props: { time: string[]; hide: boolean }) {
                 "hidden": props.hide && time < now,
                 "bg-neutral-400 dark:bg-neutral-900 text-neutral-200 dark:text-gray-600":
                   time < now,
-                "bg-green-400": time.valueOf() === next?.valueOf(),
+                "bg-green-400 dark:bg-green-800 !outline-green-400 dark:!outline-green-800": time.valueOf() === next?.valueOf(),
               })}
             >
               {time.toFormat("H:mm").toString()}

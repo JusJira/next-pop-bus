@@ -52,11 +52,11 @@ export default function RootLayout({
                   </Link>
                 </span>
                 <span className="w-full flex flex-row items-center justify-center gap-1">
-                  <Link href="https://instagram.com/Jus.Jira">
+                  <Link href="https://instagram.com/Jus.Jira" aria-label="Instagram Link">
                     <Instagram />
                   </Link>
 
-                  <Link href="https://github.com/jusjira/next-pop-bus">
+                  <Link href="https://github.com/jusjira/next-pop-bus" aria-label="Github Link">
                     <Github />
                   </Link>
                 </span>
