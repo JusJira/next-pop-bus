@@ -27,9 +27,9 @@ function TimeBox(props: { time: string[] }) {
           <div
             key={index}
             className={classNames({
-              "outline outline-1 outline-white w-16 text-center p-1 rounded-sm":
+              "outline outline-1 outline-black dark:outline-white w-16 text-center p-1 rounded-sm":
                 true,
-              "!bg-neutral-900 text-gray-600 outline-gray-500": time < now
+              "bg-neutral-400 dark:bg-neutral-900 text-neutral-200 dark:text-gray-600": time < now
               ,
               "bg-green-400": time.valueOf() === next?.valueOf(),
             })}

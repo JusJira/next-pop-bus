@@ -392,7 +392,7 @@ const bus5_2 = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-[100dvh] dark:bg-neutral-900 bg-neutral-300 justify-center items-start">
+    <main className="flex min-h-[100dvh] justify-center items-start">
       <div className="flex m-4 sm:m-10 w-full flex-col gap-3">
         <div className="box w-full p-3 rounded-md flex items-center justify-between px-6">
           <h1 className="font-bold text-lg text">CU POP BUS</h1>
