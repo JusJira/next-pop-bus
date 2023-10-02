@@ -14,10 +14,18 @@ function TimeBox(props: { time: string[]; hide: boolean }) {
     .find(function (m) {
       return m > now;
     });
-
-  var ctime = props.time.map(function (s) {
-    return DateTime.fromFormat(s, "HH:mm", { zone: "Asia/Bangkok" });
-  });
+  if (props.hide) {
+    var allTime = props.time.map(function (s) {
+      return DateTime.fromFormat(s, "HH:mm", { zone: "Asia/Bangkok" });
+    });
+    var ctime = allTime.filter((time) => time > now).slice(0,10)
+  }
+  else {
+    var ctime = props.time.map(function (s) {
+      return DateTime.fromFormat(s, "HH:mm", { zone: "Asia/Bangkok" });
+    });
+  }
+  
   if (next) {
     return (
       <div className="flex w-full flex-row items-center justify-center">
@@ -36,7 +44,6 @@ function TimeBox(props: { time: string[]; hide: boolean }) {
               })}
             >
               {time.toFormat("H:mm").toString()}
-              {/* {next?.format('HH:mm').toString()} */}
             </div>
           ))}
         </div>
@@ -45,7 +52,7 @@ function TimeBox(props: { time: string[]; hide: boolean }) {
   }
 
   return (
-    <div className="flex items-center justify-center p-8">
+    <div className="flex items-center justify-center p-2">
       <div className="flex text gap-3 text-2xl items-center">
         รถหมดแล้ว <Frown />
       </div>
