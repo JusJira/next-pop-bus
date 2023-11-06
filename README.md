@@ -8,7 +8,7 @@ Made With
 - [shadcn/ui](https://ui.shadcn.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Lucide](https://lucide.dev/)
-- [Moment](https://momentjs.com/)
+- [Luxon](https://moment.github.io/luxon/)
 - [Love ❤️](https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygULcmljayBhc3RsZXk%3D)
 
 Hosted on
