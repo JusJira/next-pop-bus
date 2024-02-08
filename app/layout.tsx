@@ -99,6 +99,7 @@ export default function RootLayout({
                     <Github />
                   </Link>
                 </span>
+                <Clock />
               </div>
             </div>
           </main>
