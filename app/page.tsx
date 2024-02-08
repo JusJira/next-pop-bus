@@ -69,6 +69,7 @@ export default function Home() {
           alt={"Bus Route Map"}
           width={2560}
           height={2440}
+          sizes="(min-width: 2820px) 2560px, (min-width: 640px) calc(94.07vw - 74px), calc(100vw - 64px)"
         />
       </div>
     </>
