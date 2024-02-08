@@ -18,6 +18,7 @@ export const metadata: Metadata  = {
     url: "https://pop.imjustin.dev/all",
     title: "CU POP BUS Schedule",
     description: "Simple time schedule for Chulalongkorn University POP BUS departing time.",
+    type: "website",
   }
 }
 
