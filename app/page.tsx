@@ -64,6 +64,7 @@ export default function Home() {
       <div className="box" id="map">
         <h2 className="label text">Bus Routes</h2>
         <Image
+          title="Bus Route Map"
           src={"/cu-shuttle-bus-route-2560x2440.jpg"}
           alt={"Bus Route Map"}
           width={2560}

@@ -11,8 +11,20 @@ import { Github, Instagram } from "lucide-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pop.imjustin.dev'),
   title: "CU POP BUS Schedule",
-  description: "Schedule for CU POP BUS departure time",
+  description: "Simple time schedule for Chulalongkorn University POP BUS departing time.",
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    images: [
+      "cu-pop-cover.png"
+    ],
+    url: "https://pop.imjustin.dev",
+    title: "CU POP BUS Schedule",
+    description: "Simple time schedule for Chulalongkorn University POP BUS departing time.",
+  }
 };
 
 export default function RootLayout({
@@ -54,8 +66,8 @@ export default function RootLayout({
           <main className="flex min-h-[100dvh] justify-center items-start">
             <div className="flex m-4 sm:m-10 w-full flex-col gap-3">
               <div className="box w-full p-3 rounded-md flex items-center justify-between px-6 flex-row">
-                <h1 className="font-bold text-lg text">CU POP BUS</h1>
-                <Clock />
+                <h1 className="font-bold text-lg text">CU POP BUS DEPARTING SCHEDULE</h1>
+                {/* <Clock /> */}
                 <div>
                   <ModeToggle />
                 </div>

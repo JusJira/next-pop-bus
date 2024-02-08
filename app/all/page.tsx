@@ -3,8 +3,23 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { bus1, bus2, bus3, bus4, bus5_1, bus5_2 } from "@/lib/data";
+import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata  = {
+  alternates: {
+    canonical: '/all',
+  },
+  openGraph: {
+    images: [
+      "cu-pop-cover.png"
+    ],
+    url: "https://pop.imjustin.dev/all",
+    title: "CU POP BUS Schedule",
+    description: "Simple time schedule for Chulalongkorn University POP BUS departing time.",
+  }
+}
 
 export default function Home() {
   return (
