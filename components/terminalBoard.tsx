@@ -43,7 +43,7 @@ export default function TerminalBoard() {
     busScheduleData.routes.forEach((route) => {
       if (route.days === dayType) {
         route.schedule.forEach((sched) => {
-          sched.minutes.forEach((minute) => {
+          sched.minutes.forEach((minute, idx) => {
             const departureTime = now.set({
               hour: sched.hour,
               minute: minute,
@@ -57,7 +57,7 @@ export default function TerminalBoard() {
                 line: route.line,
                 path: route.path,
                 notes: sched.notes || route.generalNotes,
-                isLastBus: sched.isLastBus,
+                isLastBus: sched.isLastBus && idx === sched.minutes.length - 1,
               });
             }
           });
