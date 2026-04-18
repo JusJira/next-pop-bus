@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Clock from "@/components/clock";
 import { ModeToggle } from "@/components/themeToggle";
 import Link from "next/link";
@@ -12,21 +12,21 @@ import { Github, Instagram } from "lucide-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pop.imjustin.dev'),
+  metadataBase: new URL("https://pop.imjustin.dev"),
   title: "CU POP BUS Schedule",
-  description: "Simple time schedule for Chulalongkorn University POP BUS departing time.",
+  description:
+    "Simple time schedule for Chulalongkorn University POP BUS departing time.",
   alternates: {
-    canonical: "/"
+    canonical: "/",
   },
   openGraph: {
-    images: [
-      "cu-pop-cover.png"
-    ],
+    images: ["cu-pop-cover.png"],
     url: "https://pop.imjustin.dev",
     title: "CU POP BUS Schedule",
-    description: "Simple time schedule for Chulalongkorn University POP BUS departing time.",
+    description:
+      "Simple time schedule for Chulalongkorn University POP BUS departing time.",
     type: "website",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -61,18 +61,18 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <main className="flex min-h-[100dvh] justify-center items-start">
             <div className="flex m-4 sm:m-10 w-full flex-col gap-3">
               <div className="box w-full p-3 rounded-md flex items-center justify-between px-6 flex-row">
-                <h1 className="font-bold text-lg text">CU POP BUS DEPARTING SCHEDULE</h1>
+                <h1 className="font-bold text-lg text">
+                  CU POP BUS DEPARTING SCHEDULE
+                </h1>
                 {/* <Clock /> */}
-                <div>
-                  <ModeToggle />
-                </div>
+                <div>{/* <ModeToggle /> */}</div>
               </div>
               {children}
               <div className="w-full p-1 flex items-center justify-center flex-col gap-2">
@@ -105,7 +105,7 @@ export default function RootLayout({
             </div>
           </main>
           <Analytics />
-          <SpeedInsights/>
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
